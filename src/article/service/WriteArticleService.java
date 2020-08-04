@@ -2,6 +2,7 @@ package article.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Date;
 
 import article.dao.ArticleContentDao;
 import article.dao.ArticleDao;
@@ -47,7 +48,7 @@ public class WriteArticleService {
 	}
 
 	private Article toArticle(WriteRequest req) {
-		// TODO Auto-generated method stub
-		return null;
+		Date now = new Date();
+		return new Article(null,req.getWriter(),null,req.getTitle(),now,now,0);
 	}
 }
