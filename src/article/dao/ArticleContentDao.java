@@ -12,15 +12,15 @@ public class ArticleContentDao {
 		 PreparedStatement pstmt = null;
 		 
 		 try {
-			 pstmt = conn.prepareStatement("insert into article_content"
-					 +"(article_no,article_content) values (?,?)");
+			 pstmt = conn.prepareStatement("insert into article_content "
+					 +"(article_no,article_content) values(?,?)");
 			 pstmt.setLong(1,content.getNumber());
-			 pstmt.setString(3,content.getContent());
+			 pstmt.setString(2,content.getContent());
 			 int insertedCount = pstmt.executeUpdate();
 			 if(insertedCount > 0) {
 				 return content;
 			 } else {
-				 return content;
+				 return null;
 			 }
 			 
 		 } finally {
